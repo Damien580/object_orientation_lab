@@ -465,10 +465,30 @@ console.log(myFirstMotorcycle)
   This function should set isSeaworthy to be true
 */
 
-//Code Here
-// class Boat extends Vehicle{
-//   constructor
-// }
+// Code Here
+class Boat extends Vehicle{
+  constructor(capacity, color, mileage, name, type, isSeaworthy){
+  super(capacity, color, mileage)
+
+  this.name = name;
+  this.type = type;
+  this.isSeaworthy = false
+        }
+ checkSeaworthiness(){
+    if (this.isSeaworthy === true){
+      console.log(`The ${this.color} ${this.type} ${this.name} is seaworthy.`)
+    }else console.log(`You need to get your ${this.type} in shape!`)
+      }
+  performMaintenance(){
+      this.isSeaworthy = true;
+      return this.isSeaworthy
+    }
+
+  }
+
+ 
+ 
+
 
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
@@ -476,21 +496,25 @@ console.log(myFirstMotorcycle)
 */
 
 //Code Here
+let myFirstBoat = new Boat(7, 'Yellow', 0, 'The Doops', 'Bow Cruiser', false)
+console.log(myFirstBoat) 
 
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
+myFirstBoat.checkSeaworthiness()
 
 /*
   Now run the performMaintenance method on your boat
 */
 
 //Code Here 
-
+myFirstBoat.performMaintenance()
+console.log(myFirstBoat)
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
-
+myFirstBoat.checkSeaworthiness()
 //Code Here
