@@ -403,18 +403,21 @@ class Vehicle {
     this.capacity = capacity;
     this.color = color;
     this.mileage = mileage
-  }
+  } 
   move(miles){
-    this.mileage = miles;
-    (miles);
+    this.mileage += miles
+   return this.mileage
   }
 }
+
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
+let myFirstVehicle = new Vehicle(6, 'Green', 000)
+console.log(myFirstVehicle)
 
 
 /* 
@@ -426,17 +429,26 @@ class Vehicle {
 */
 
 //Code Here
-
+class Motorcycle extends Vehicle{
+  constructor( capacity, color, mileage, make, isCool){
+    super(capacity, color, mileage)
+    
+    this.make = make;
+    this.isCool = true
+  }
+}
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
 //Code Here 
-
+let myFirstMotorcycle = new Motorcycle(2, 'blue', 0, 'Ford')
+console.log(myFirstMotorcycle)
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
-
+myFirstMotorcycle.move(1000)
+console.log(myFirstMotorcycle)
 /*
   Let's make another class based off of Vehicle. 
 
@@ -454,7 +466,9 @@ class Vehicle {
 */
 
 //Code Here
-
+// class Boat extends Vehicle{
+//   constructor
+// }
 
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
